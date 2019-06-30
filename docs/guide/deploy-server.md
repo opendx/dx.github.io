@@ -6,7 +6,7 @@
 - mysql5.7
 
 ## 下载
-http://www.baidu.com
+todo
 
 ## 创建Mysql数据库
 create database {db_name}

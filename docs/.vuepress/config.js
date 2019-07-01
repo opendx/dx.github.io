@@ -4,7 +4,7 @@ module.exports = {
     locales: {
         '/': {
             title: 'Opendx',
-            description: '自动化测试平台'
+            description: '开源自动化测试平台'
         }
     },
     themeConfig: {
@@ -26,7 +26,7 @@ module.exports = {
                             ]
                         },
                         {
-                            title: '使用指南',
+                            title: '部署',
                             collapsable: false,
                             children: [
                                 'deploy-server',

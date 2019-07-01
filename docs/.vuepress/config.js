@@ -32,6 +32,20 @@ module.exports = {
                                 'deploy-server',
                                 'deploy-agent'
                             ]
+                        },
+                        {
+                            title: '使用指南',
+                            collapsable: false,
+                            children: [
+                                'guide-project'
+                            ]
+                        },
+                        {
+                            title: '进阶',
+                            collapsable: false,
+                            children: [
+                                ''
+                            ]
                         }
                     ]
                 }

@@ -3,6 +3,6 @@ opendx是一个开源的UI自动化测试平台，目标是降低UI自动化测�
 
 ## 平台结构
 
-![](/assets/dx.png)
+<img src="/assets/dx.png" class="zoom">
 
 ## 演示视频

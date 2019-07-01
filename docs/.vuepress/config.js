@@ -1,6 +1,11 @@
 'use strict';
 
 module.exports = {
+    plugins: {
+        '@vuepress/medium-zoom': {
+            selector: 'img.zoom'
+        }
+    },
     locales: {
         '/': {
             title: 'Opendx',
@@ -17,27 +22,28 @@ module.exports = {
                     }
                 ],
                 sidebar: {
-                    '/guide/': [
+                    '/': [
                         {
                             title: '介绍',
                             collapsable: false,
                             children: [
-                                'introduction'
+                                '/guide/introduction'
                             ]
                         },
                         {
                             title: '部署',
                             collapsable: false,
                             children: [
-                                'deploy-server',
-                                'deploy-agent'
+                                '/guide/deploy-server',
+                                '/guide/deploy-agent'
                             ]
                         },
                         {
                             title: '使用指南',
                             collapsable: false,
                             children: [
-                                'guide-project'
+                                '/guide/guide-project',
+                                '/guide/guide-device'
                             ]
                         },
                         {

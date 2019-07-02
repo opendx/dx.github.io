@@ -44,7 +44,8 @@ module.exports = {
                             children: [
                                 '/guide/guide-device',
                                 '/guide/guide-project',
-                                '/guide/guide-page'
+                                '/guide/guide-page',
+                                '/guide/guide-action'
                             ]
                         },
                         {

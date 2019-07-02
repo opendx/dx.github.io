@@ -42,8 +42,9 @@ module.exports = {
                             title: '使用指南',
                             collapsable: false,
                             children: [
+                                '/guide/guide-device',
                                 '/guide/guide-project',
-                                '/guide/guide-device'
+                                '/guide/guide-page'
                             ]
                         },
                         {

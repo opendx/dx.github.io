@@ -24,7 +24,7 @@ module.exports = {
                 sidebar: {
                     '/': [
                         {
-                            title: '介绍',
+                            title: 'Opendx',
                             collapsable: false,
                             children: [
                                 '/guide/introduction'

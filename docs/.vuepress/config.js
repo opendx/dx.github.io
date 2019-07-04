@@ -51,7 +51,8 @@ module.exports = {
                                 '/guide/guide-action',
                                 '/guide/guide-testcase',
                                 '/guide/guide-testplan',
-                                '/guide/guide-report'
+                                '/guide/guide-report',
+                                '/guide/guide-android'
                             ]
                         },
                         {

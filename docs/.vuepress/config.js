@@ -42,9 +42,12 @@ module.exports = {
                             title: '使用指南',
                             collapsable: false,
                             children: [
+                                '/guide/guide-agent',
+                                '/guide/guide-app',
                                 '/guide/guide-device',
                                 '/guide/guide-project',
                                 '/guide/guide-page',
+                                '/guide/guide-globalvar',
                                 '/guide/guide-action',
                                 '/guide/guide-testcase',
                                 '/guide/guide-testplan',

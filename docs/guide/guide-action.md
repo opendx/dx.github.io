@@ -36,7 +36,11 @@ action如下:
 引用局部变量返回。
 ### 步骤
 步骤即一个action。我们可以将步骤的返回值（如果有返回值的话）赋值给局部变量。
+
+## 绑定Page
+<img src="/assets/action_select_page.png" class="zoom">
+<img src="/assets/action_page.png" class="zoom">
+
 ## 动态调试action
 在以往的UI自动化测试中，调试自动化脚本往往是最麻烦最耗时的。平台提供的实时调试功能，大大减少了调试时间。
 <img src="/assets/debug_action.gif" class="zoom">
-

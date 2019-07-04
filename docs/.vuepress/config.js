@@ -45,7 +45,10 @@ module.exports = {
                                 '/guide/guide-device',
                                 '/guide/guide-project',
                                 '/guide/guide-page',
-                                '/guide/guide-action'
+                                '/guide/guide-action',
+                                '/guide/guide-testcase',
+                                '/guide/guide-testplan',
+                                '/guide/guide-report'
                             ]
                         },
                         {

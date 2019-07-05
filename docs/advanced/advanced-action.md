@@ -29,4 +29,4 @@ public class Click {
 }
 ```
 
-##
+## 将自定义的action添加到mysql-action表

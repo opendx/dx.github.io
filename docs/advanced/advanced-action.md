@@ -42,7 +42,7 @@ INSERT INTO `action` (
 	`need_driver`,             -- 0：不需要传入driver 1:需要传入driver，必填
 	`has_return_value`,        -- 0：无返回值 1：有返回值，必填
 	`return_value_desc`,       -- 返回值描述，非必填
-	`platform`,                -- 1：Android 2：iOS，null：通用，非必填
+	`platform`,                -- 1：Android 2：iOS null：通用，非必填
 	`params`,                  -- 参数，非必填
     `page_id`,                 -- 绑定page，非必填
     `project_id`,              -- 绑定project，非必填

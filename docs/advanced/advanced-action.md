@@ -96,7 +96,7 @@ VALUES
 ```
 
 * name
-<img src="/assets/param_name.png" class="zoom">
+<img :src="$withBase('/assets/param_name.png')" class="zoom">
 
 * possibleValues
-<img src="/assets/param_possible_values.png" class="zoom">
+<img :src="$withBase('/assets/param_possible_values.png')" class="zoom">

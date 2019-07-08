@@ -2,7 +2,7 @@
 Opendx是一个开源的UI自动化测试平台，目标是降低UI自动化测试的门槛和成本。
 
 ## 一张图概括Opendx
-<img src="/assets/dx.png" class="zoom">
+<img :src="$withBase('/assets/dx.png')" class="zoom">
 
 ## 演示视频
 todo

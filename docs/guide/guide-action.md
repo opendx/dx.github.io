@@ -20,8 +20,7 @@ action如下:
 ```
 
 ## 添加Action
-
-<img src="/assets/save_action.png" class="zoom">
+<img :src="$withBase('/assets/save_action.png')" class="zoom">
 
 ### 方法参数（使用#{}引用）
 希望调用方传入的值，如：我们新增一个登录Action，可以把账号和密码作为方法参数，在action的步骤里引用方法参数（调用方传入的账号密码）。其他action想要登录，只需要调用登录action即可。
@@ -38,9 +37,9 @@ action如下:
 步骤即一个action。我们可以将步骤的返回值（如果有返回值的话）赋值给局部变量。
 
 ## 绑定Page
-<img src="/assets/action_select_page.png" class="zoom">
-<img src="/assets/action_page.png" class="zoom">
+<img :src="$withBase('/assets/action_select_page.png')" class="zoom">
+<img :src="$withBase('/assets/action_page.png')" class="zoom">
 
 ## 动态调试action
 在以往的UI自动化测试中，调试自动化脚本往往是最麻烦最耗时的。平台提供的实时调试功能，大大减少了调试时间。
-<img src="/assets/debug_action.gif" class="zoom">
+<img :src="$withBase('/assets/debug_action.gif')" class="zoom">

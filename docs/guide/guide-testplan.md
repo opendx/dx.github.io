@@ -1,7 +1,7 @@
 # 测试计划
 
 ## 制定测试计划
-<img src="/assets/add_testplan.png" class="zoom">
+<img :src="$withBase('/assets/add_testplan.png')" class="zoom">
 
 * BeforeClass：在执行测试用例前执行的操作。推荐将一些初始化的操作设定为BeforeClass，比如安装APP。
 * BeforeMethod：在执行每条测试用例前执行的操作。为了保证每条测试用例能够独立运行，不相互依赖，我们可以在BeforeMethod里设定一个Action，比如重启APP到首页。
@@ -11,8 +11,8 @@
 
 ## 提交测试任务
 指定好测试计划后，我们可以随时提交测试，测试结束后会形成相应的测试报告。
-<img src="/assets/commit_test.png" class="zoom">
-<img src="/assets/commit_test_dialog.png" class="zoom">
+<img :src="$withBase('/assets/commit_test.png')" class="zoom">
+<img :src="$withBase('/assets/commit_test_dialog.png')" class="zoom">
 
 * 设备：指定在哪些设备上测试
 * 用例分发策略

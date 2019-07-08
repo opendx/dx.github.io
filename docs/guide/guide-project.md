@@ -6,5 +6,4 @@
 首次登陆系统，将会引导我们创建一个项目
 
 ## 选择测试项目
-![](/assets/select_project.png)
-
+<img :src="$withBase('/assets/select_project.png')" class="zoom">

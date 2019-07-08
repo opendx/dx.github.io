@@ -7,11 +7,10 @@ page代表一个页面，保存了页面布局等信息。主要作用：
 ## 添加Page
 1. 在设备里，使用一台设备
 2. 获取当前页面信息，添加Page
-<img src="/assets/page_dump.png" class="zoom">
+<img :src="$withBase('/assets/page_dump.png')" class="zoom">
 3. 保存Page
-<img src="/assets/page_save.png" class="zoom">
+<img :src="$withBase('/assets/page_save.png')" class="zoom">
 
 ## 添加Page分类
 添加Page分类，用于Page分类管理
-<img src="/assets/add_page_category.png" class="zoom">
-
+<img :src="$withBase('/assets/add_page_category.png')" class="zoom">

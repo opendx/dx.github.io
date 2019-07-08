@@ -3,9 +3,9 @@
 
 ## 详细信息
 测试报告记录了每条测试用例的整个执行过程
-<img src="/assets/report_detail.gif" class="zoom">
+<img :src="$withBase('/assets/report_detail.gif')" class="zoom">
 
 ## 维护非bug导致失败的测试用例
-<img src="/assets/fix_fail_case.png" class="zoom">
+<img :src="$withBase('/assets/fix_fail_case.png')" class="zoom">
 
 [动态调试快速修正失败的测试用例](/guide/guide-action.html#动态调试action)

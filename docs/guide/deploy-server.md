@@ -4,7 +4,7 @@
 - mysql5.7
 
 ## 下载
-todo
+https://pan.baidu.com/s/11CspmuBy6gZKaYvnIwq8Kg  提取码：e8iw
 
 ## 创建Mysql数据库
 create database {db_name}
@@ -18,6 +18,9 @@ https://github.com/opendx/server/blob/master/db/data.sql
 ## 启动server
 java -jar server-{version}.jar --db-url={mysql ip:port/database} --db-username={mysql username} --db-password={mysql password} --server.port={port}
 > 示例: java -jar server-0.9.0.jar --db-url=127.0.0.1:3306/daxiang --db-username=root --db-password=root --server.port=8887
+
+* --db-url --db-username --db-password 必须指定
+* --server.port可以不指定，默认为8887
 
 ## 访问Opendx
 浏览器访问 http://{server.ip}:{server.port}

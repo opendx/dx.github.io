@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+    base: '/opendx/',
     plugins: {
         '@vuepress/medium-zoom': {
             selector: 'img.zoom'

@@ -10,7 +10,7 @@
 * 测试集：待测试的测试集，可以多选。
 
 ## 提交测试任务
-指定好测试计划后，我们可以随时提交测试，测试结束后会形成相应的测试报告。
+制定好测试计划后，我们可以随时提交测试，测试结束后会形成相应的测试报告。
 <img :src="$withBase('/assets/commit_test.png')" class="zoom">
 <img :src="$withBase('/assets/commit_test_dialog.png')" class="zoom">
 

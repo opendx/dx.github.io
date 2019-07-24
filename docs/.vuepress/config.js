@@ -10,7 +10,7 @@ module.exports = {
     locales: {
         '/': {
             title: 'Opendx',
-            description: '一个更懂你的开源自动化测试平台'
+            description: '一个懂你的开源自动化测试平台'
         }
     },
     themeConfig: {

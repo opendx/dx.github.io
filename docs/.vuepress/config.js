@@ -62,6 +62,10 @@ module.exports = {
                             children: [
                                 '/advanced/advanced-action'
                             ]
+                        }, {
+                            title: '常见问题',
+                            collapsable: false,
+                            children: []
                         }
                     ]
                 }

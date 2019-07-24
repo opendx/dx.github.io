@@ -1,7 +1,6 @@
 # Android
 
 ## dump布局
-todo xx
 <img :src="$withBase('/assets/fast_dump.gif')" class="zoom">
 
 ## 安装APK

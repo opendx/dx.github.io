@@ -58,10 +58,10 @@ INSERT INTO `action` (
 VALUES
 (
     1,
-    '点击',
-    '点击元素',
+    '查找元素',
+    'AppiumDriver.findElement',
     1,
-    'com.daxiang.action.FindElement',
+    'com.daxiang.action.appium.FindElement',
     1,
     1,
     'WebElement',

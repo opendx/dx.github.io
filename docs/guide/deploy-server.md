@@ -13,7 +13,7 @@ create database {db_name}
 https://github.com/opendx/server/blob/master/db/table.sql
 
 ## 初始化数据
-https://github.com/opendx/server/blob/master/db/data.sql
+https://github.com/opendx/agent/blob/master/src/main/java/com/daxiang/action/data.sql
 
 ## 启动server
 java -jar server-{version}.jar --db-url={mysql ip:port/database} --db-username={mysql username} --db-password={mysql password} --server.port={port}

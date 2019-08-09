@@ -1,8 +1,5 @@
 # 自定义action
 
-很多时候，平台提供的action无法满足所有需求。比如有这样一个需求：在执行自动化测试时，需要校验订单列表最近的一个订单号显示是否正确。
-此时你一定在想：要是有个“获取最近一个订单号”的action该多好啊！下面介绍如何自定义一个action，来满足各种需求。
-
 ## 添加自定义action
 
 ### 编写action代码
@@ -45,12 +42,11 @@ INSERT INTO `action` (
 	`id`,                      -- 主键id，必填
 	`name`,                    -- action名称，必填
 	`description`,             -- 描述，非必填
-	`type`,                    -- 1（基础action），必填
-	`class_name`,              -- 包名 + 类名，基础action必填
-	`need_driver`,             -- 0：不需要传入driver 1:需要传入driver，必填
-	`has_return_value`,        -- 0：无返回值 1：有返回值，必填
+	`class_name`,              -- 包名 + 类名
+	`need_driver`,             -- 0:不需要传入driver  1:需要传入driver，必填
+	`has_return_value`,        -- 0:无返回值  1:有返回值，必填
 	`return_value_desc`,       -- 返回值描述，非必填
-	`platform`,                -- 1：Android  2：iOS  null：通用，非必填
+	`platform`,                -- 1:Android  2:iOS  null:通用，非必填
 	`params`,                  -- 参数，非必填
     `page_id`,                 -- 绑定page，非必填
     `project_id`,              -- 绑定project，非必填
@@ -60,13 +56,12 @@ VALUES
     1,
     '查找元素',
     'AppiumDriver.findElement',
-    1,
     'com.daxiang.action.appium.FindElement',
     1,
     1,
     'WebElement',
     null,
-    '[{"name": "FindBy", "description": "查找方式", "possibleValues": [{"value": "id", "description": ""}, {"value": "xpath", "description": ""}]},{"name": "Value", "description": "查找值"}]',
+    '[{"name":"findBy","description":"查找方式","possibleValues":[{"value":"id","description":"MobileBy.id"},{"value":"AccessibilityId","description":"MobileBy.AccessibilityId"},{"value":"xpath","description":"MobileBy.xpath"},{"value":"AndroidUIAutomator","description":"MobileBy.AndroidUIAutomator"},{"value":"iOSClassChain","description":"MobileBy.iOSClassChain"},{"value":"iOSNsPredicateString","description":"MobileBy.iOSNsPredicateString"},{"value":"image","description":"MobileBy.image"}]},{"name":"value","description":"查找值"}]'
     null,
     null
 );
@@ -76,17 +71,32 @@ VALUES
 
 ```json
 [{
-	"name": "FindBy",
+	"name": "findBy",
 	"description": "查找方式",
 	"possibleValues": [{
 		"value": "id",
-		"description": ""
+		"description": "MobileBy.id"
+	}, {
+		"value": "AccessibilityId",
+		"description": "MobileBy.AccessibilityId"
 	}, {
 		"value": "xpath",
-		"description": ""
+		"description": "MobileBy.xpath"
+	}, {
+		"value": "AndroidUIAutomator",
+		"description": "MobileBy.AndroidUIAutomator"
+	}, {
+		"value": "iOSClassChain",
+		"description": "MobileBy.iOSClassChain"
+	}, {
+		"value": "iOSNsPredicateString",
+		"description": "MobileBy.iOSNsPredicateString"
+	}, {
+		"value": "image",
+		"description": "MobileBy.image"
 	}]
 }, {
-	"name": "Value",
+	"name": "value",
 	"description": "查找值"
 }]
 ```

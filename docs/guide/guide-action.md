@@ -28,4 +28,4 @@ action代表一个或多个操作的集合，也可以把action看成是一个�
 
 ## 动态调试action
 在以往的UI自动化测试中，调试自动化脚本往往是最麻烦最耗时的。平台提供的实时调试功能，大大减少了调试时间。
-<img :src="$withBase('/assets/debug_action.gif')" class="zoom">
+<video :src="$withBase('/assets/debug_action.mov')" width="720px" controls="controls">浏览器不支持video标签</video>

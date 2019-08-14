@@ -1,5 +1,5 @@
 # 部署server
-- windows | linux | mac
+- windows | linux | macos
 - java1.8
 - mysql5.7
 

@@ -61,7 +61,8 @@ module.exports = {
                             title: '进阶',
                             collapsable: false,
                             children: [
-                                '/advanced/advanced-action'
+                                '/advanced/advanced-action',
+                                '/advanced/advanced-debugcode'
                             ]
                         }, {
                             title: '常见问题',

@@ -3,7 +3,7 @@
 ## 添加自定义action
 
 ### 编写action代码
-在agent工程com.daxiang.action添加自定义action。以com.daxiang.action.FindElement.java为例说明如何自定义action。
+在agent工程com.daxiang.action添加自定义action。以com.daxiang.action.appium.FindElement.java为例说明如何自定义action。
 ```java
 package com.daxiang.action.appium;
 

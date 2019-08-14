@@ -53,7 +53,8 @@ module.exports = {
                                 '/guide/guide-testcase',
                                 '/guide/guide-testplan',
                                 '/guide/guide-report',
-                                '/guide/guide-android'
+                                '/guide/guide-android',
+                                '/guide/guide-ios'
                             ]
                         },
                         {

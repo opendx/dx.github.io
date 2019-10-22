@@ -4,6 +4,5 @@
 ## 绑定测试集
 
 * 添加测试集
-<img :src="$withBase('/assets/add_test_suite.png')" class="zoom">
 * 测试用例绑定测试集
 <img :src="$withBase('/assets/save_testcase_to_suite.png')" class="zoom">

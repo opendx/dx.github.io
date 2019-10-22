@@ -1,10 +1,10 @@
 # 部署server
 - windows | linux | macos
-- java1.8
-- mysql5.7
+- java8 （不能低于java8。其他版本未测试，可能有坑，建议用java8）
+- mysql5.7 （不能低于5.7）
 
 ## 下载
-https://pan.baidu.com/s/11CspmuBy6gZKaYvnIwq8Kg  提取码：e8iw
+百度网盘不再维护，请进群（qq群：703392467）下载或自主源码构建
 
 ## 创建Mysql数据库
 create database {db_name}
@@ -23,4 +23,4 @@ java -jar server-{version}.jar --db-url={mysql ip:port/database} --db-username={
 * --server.port可以不指定，默认为8887
 
 ## 访问Opendx
-浏览器访问 http://{server.ip}:{server.port}
+浏览器访问 http://{server.ip}:{server.port}。最好用局域网ip进行访问，如：http://192.168.1.2:8887

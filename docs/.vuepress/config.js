@@ -65,9 +65,11 @@ module.exports = {
                                 '/advanced/advanced-debugcode'
                             ]
                         }, {
-                            title: '常见问题',
+                            title: 'FAQ',
                             collapsable: false,
-                            children: []
+                            children: [
+                                '/faq/faq'
+                            ]
                         }
                     ]
                 }

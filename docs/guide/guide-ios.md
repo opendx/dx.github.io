@@ -1,7 +1,7 @@
 # iOS
 
 ## dump布局
-<video :src="$withBase('/assets/ios_dump.mov')" width="720px" controls="controls">浏览器不支持video标签</video>
+同[android](/guide/guide-android.html)
 
 ## 安装ipa
-<img :src="$withBase('/assets/install_ipa.png')" class="zoom">
+同[android](/guide/guide-android.html)

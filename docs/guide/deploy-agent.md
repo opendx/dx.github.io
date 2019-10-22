@@ -1,14 +1,11 @@
 # 部署agent
 * windows | linux | macos
-* java8 （必须）
+* java8 （不能低于java8。其他版本未测试，可能有坑，建议用java8）
 * appium （必须。建议使用最新版本）
-* aapt （非必须。若要dump apk信息获取packageName、启动activity等信息，需要将aapt(androidSdk/build-tools/{version})添加到环境变量）
+* aapt （非必须。获取apk包名，启动activity，版本号要用到）
+* ffmpeg （非必须。合成录制的视频要用到）
 
 ## appium
-```sh
-$ appium -v
-1.14.0
-```
 
 ```sh
 $ appium-doctor --android
@@ -41,17 +38,19 @@ info AppiumDoctor  ✔ ios_webkit_debug_proxy is installed at: /usr/local/bin/io
 ```
 
 ## 下载
-https://pan.baidu.com/s/11CspmuBy6gZKaYvnIwq8Kg  提取码：e8iw
+百度网盘不再维护，请进群（qq群：703392467）下载或自主源码构建
 
 ## 启动agent
 java -jar agent-{version}.jar --server.address={server_address} --master=http://{master_ip:master_port} --android=true
 > 示例：java -jar agent-0.9.0.jar --server.address=192.168.1.8 --master=http://192.168.1.2:8887 --android=true
 
-* --server.address: agent ip，必须指定
-* --server.port: agent服务端口，可以不指定，默认为10004
-* --master: server的运行地址，必须指定，格式为http://server_ip:server_port
-* --appiumJs: appium main.js位置，若控制台输入appium能启动appium server，则可以不指定
-* --android: 是否启用android功能，可以不指定，默认false
-* --minicap-quality: android远程投屏视频质量，可以不指定，默认25。范围: 0-100
-* --ios: 是否启用ios功能，可以不指定，默认false
-* --mjpegServerFramerate: ios远程投屏fps，可以不指定，默认60fps。范围: 1-60
+* --server.address: 必须。agent ip（当前pc的局域网ip，如: 192.168.1.1）
+* --server.port: 非必须。agent服务端口，默认为10004
+* --master: 必须。server的运行地址，如: http://192.168.1.2:8887
+* --appiumJs: 非必须。如果是npm安装的appium(控制台敲appium能启动appium)，可以不指定。
+如果是用appium desktop（控制台敲appium无法启动appium），必须指定，如：C:/Users/jyt/AppData/Local/Programs/Appium/resources/app/node_modules/appium/build/lib/main.js
+* --android: 非必须。是否启用android功能，默认false
+* --minicap-quality: 非必须。android远程投屏视频质量，默认25。范围: 1-100
+* --ios: 非必须。是否启用ios功能，默认false
+* --mjpegServerFramerate: 非必须。ios远程投屏fps，默认60fps。范围: 1-60
+* --xcodeOrgId --xcodeSigningId --updatedWDABundleId: 非必须。ios真机配置，https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md

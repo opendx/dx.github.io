@@ -54,7 +54,8 @@ module.exports = {
                                 '/guide/guide-testplan',
                                 '/guide/guide-report',
                                 '/guide/guide-android',
-                                '/guide/guide-ios'
+                                '/guide/guide-ios',
+                                '/guide/guide-webview'
                             ]
                         },
                         {

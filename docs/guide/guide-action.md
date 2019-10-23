@@ -37,6 +37,9 @@ action代表一个或多个操作的集合。一个点击操作是action，一�
 如：在执行java代码code中使用driver.getPageSource()获取页面内容，使用$.click("id", "xxx")点击元素。
 一次action调试或测试任务，所有action都可以直接使用共享的vars，可以通过vars在action之间共享或传递值。
 
+## 返回值类型
+请参考[这里](/advanced/advanced-action.html#添加轻量级代码action)
+
 ## import
 由于action step支持内嵌java代码，import可以帮助我们简化内嵌代码。比如我们需要在内嵌代码里使用org.apache.commons.lang3.StringUtils:
 1. import里填入import org.apache.commons.lang3.StringUtils;

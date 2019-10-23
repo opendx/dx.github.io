@@ -50,6 +50,7 @@ VALUES
 ## 添加轻量级代码action
 
 1. 添加action
+<img :src="$withBase('/assets/return_value.png')" class="zoom">
 <img :src="$withBase('/assets/add_lite_action.png')" class="zoom">
 2. 测试action
 <img :src="$withBase('/assets/test_lite_action.png')" class="zoom">

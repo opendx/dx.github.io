@@ -34,7 +34,7 @@ action代表一个或多个操作的集合。一个点击操作是action，一�
 * BasicAction $
 * Map<String, Object> vars
 
-如：在执行java代码code中使用driver.getPageSource()获取页面内容，使用$.click("id", "xxx")点击元素。
+如：在执行java代码code中使用driver.getPageSource()获取页面内容，使用$.click("id", "xxx")点击元素（更多action可以点击action detail查看）。
 一次action调试或测试任务，所有action都可以直接使用共享的vars，可以通过vars在action之间共享或传递值。
 
 ## 返回值类型

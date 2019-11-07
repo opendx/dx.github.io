@@ -6,11 +6,8 @@
 ## 下载
 百度网盘不再维护，请进群（qq群：703392467）下载或自主源码构建
 
-## 创建Mysql数据库
-create database {db_name}
-
-## 创建表
-https://github.com/opendx/server/blob/master/db/table.sql
+## 创建数据库和表
+https://github.com/opendx/server/blob/master/db
 
 ## 初始化数据
 https://github.com/opendx/agent/tree/master/src/main/java/com/daxiang/action/sql

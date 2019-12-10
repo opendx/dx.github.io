@@ -14,6 +14,7 @@ action代表一个或多个操作的集合。一个点击操作是action，一�
 * import
 * action: 执行java代码[executeJavaCode]
 * 赋值
+* page元素(渲染为page.name_element.name)
 
 ## 添加action
 以登录为例进行说明

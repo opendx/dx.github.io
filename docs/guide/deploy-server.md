@@ -8,6 +8,7 @@
 
 ## 创建数据库和表
 https://github.com/opendx/server/blob/master/db
+> 新用户无需执行update.sql
 
 ## 初始化数据
 https://github.com/opendx/agent/tree/master/src/main/java/com/daxiang/action/sql
@@ -18,6 +19,14 @@ java -jar server-{version}.jar --db-url={mysql ip:port/database} --db-username={
 
 * --db-url --db-username --db-password 必须指定
 * --server.port可以不指定，默认为8887
+
+## 注意事项
+* server.jar, frontend处于同一个目录
+```
+├─server-{version}.jar
+├─frontend
+```
+* cd到server.jar所处的目录，执行java -jar启动server，否则将无法访问到前端
 
 ## 访问Opendx
 浏览器访问 http://{server.ip}:{server.port}。最好用局域网ip进行访问，如：http://192.168.1.2:8887

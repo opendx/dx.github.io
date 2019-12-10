@@ -47,6 +47,7 @@ module.exports = {
                                 '/guide/guide-app',
                                 '/guide/guide-device',
                                 '/guide/guide-project',
+                                '/guide/guide-environment',
                                 '/guide/guide-page',
                                 '/guide/guide-globalvar',
                                 '/guide/guide-action',

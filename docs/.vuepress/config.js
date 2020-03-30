@@ -9,8 +9,8 @@ module.exports = {
     },
     locales: {
         '/': {
-            title: 'Opendx',
-            description: '基于Appium的开源自动化测试平台'
+            title: 'opendx',
+            description: '基于Appium的开源UI自动化测试平台'
         }
     },
     themeConfig: {
@@ -25,7 +25,7 @@ module.exports = {
                 sidebar: {
                     '/': [
                         {
-                            title: 'Opendx',
+                            title: 'opendx',
                             collapsable: false,
                             children: [
                                 '/guide/introduction'
@@ -35,42 +35,23 @@ module.exports = {
                             title: '部署',
                             collapsable: false,
                             children: [
-                                '/guide/deploy-server',
-                                '/guide/deploy-agent'
+                                '/guide/deploy'
                             ]
                         },
                         {
                             title: '使用指南',
                             collapsable: false,
                             children: [
-                                '/guide/guide-agent',
-                                '/guide/guide-app',
-                                '/guide/guide-device',
-                                '/guide/guide-project',
-                                '/guide/guide-environment',
-                                '/guide/guide-page',
-                                '/guide/guide-globalvar',
-                                '/guide/guide-action',
-                                '/guide/guide-testcase',
-                                '/guide/guide-testplan',
-                                '/guide/guide-report',
-                                '/guide/guide-android',
-                                '/guide/guide-ios',
-                                '/guide/guide-webview'
+                                '/guide/1',
+                                '/guide/2',
+                                '/guide/3'
                             ]
                         },
                         {
-                            title: '进阶',
-                            collapsable: false,
-                            children: [
-                                '/advanced/advanced-action',
-                                '/advanced/advanced-debugcode'
-                            ]
-                        }, {
                             title: 'FAQ',
                             collapsable: false,
                             children: [
-                                '/faq/faq'
+                                '/guide/faq'
                             ]
                         }
                     ]

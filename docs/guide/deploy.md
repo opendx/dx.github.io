@@ -18,7 +18,8 @@ qq群: 703392467，群文件下载或源码构建
 https://github.com/opendx/server/blob/master/db
 1. 创建数据库database.sql
 2. 创建表table.sql
-3. 导入数据data.sql & [basic_action.sql](https://github.com/opendx/agent/blob/master/src/main/java/com/daxiang/action/sql/basic_action.sql)
+3. 导入数据data.sql
+4. 导入数据[action.sql](https://github.com/opendx/agent/blob/master/src/main/java/com/daxiang/action/action.sql)
 > update.sql为升级平台版本要执行的sql，新用户无需关注
 
 ### 启动server

@@ -1,11 +1,10 @@
 # 部署
-在部署之前，我们需要搞清server和agent的关系，如下图所示。由于一台电脑所能连接的手机有限，我们可以通过部署更多的agent在不同电脑上，来达到连接更多手机的目的。
 > server和agent可以部署在同一台电脑上
 
 <img :src="$withBase('/assets/server-agent.png')" class="zoom">
 
-## 下载server和agent
-qq群: 703392467，群文件下载或源码构建
+## 下载
+打包好的server与agent在qq群(`703392467`)文件共享，你也可以通过源码构建
 
 ## 部署server
 
@@ -15,48 +14,61 @@ qq群: 703392467，群文件下载或源码构建
 - mysql5.7
 
 ### 创建表与数据
-https://github.com/opendx/server/blob/master/db
+打开https://github.com/opendx/server/blob/master/db
 1. 创建数据库database.sql
 2. 创建表table.sql
 3. 导入数据data.sql
-4. 导入数据[action.sql](https://github.com/opendx/agent/blob/master/src/main/java/com/daxiang/action/action.sql)
 > update.sql为升级平台版本要执行的sql，新用户无需关注
 
 ### 启动server
-java -jar server-{version}.jar --db-url={mysql ip:port/database} --db-username={mysql username} --db-password={mysql password} --server.port={port}
-> 示例: java -jar server-0.1.0.jar --db-url=127.0.0.1:3306/daxiang --db-username=root --db-password=root --server.port=8887
-
-* --db-url --db-username --db-password 必须指定
-* --server.port可以不指定，默认为8887
-* `必须cd到server.jar所处的目录`，执行java -jar启动server，否则将无法访问到前端网页
+server目录结构如下: 
 ```
 ├─server-{version}.jar
 └─static
     ├── frontend
 ```
+1. <font color='red'>必须cd到server-{version}.jar所在目录</font>
+2. java -jar server-{version}.jar
+> 示例: java -jar server-0.1.0.jar --db-url=127.0.0.1:3306/daxiang --db-username=root --db-password=root
+
+|启动参数|是否必须|描述|
+|----|----|----|
+|db-url|Y|数据库地址，示例: 127.0.0.1:3306/daxiang|
+|db-username|Y|数据库账号，示例: root|   
+|db-password|Y|数据库密码，示例: root|
+|server.port|N|服务端口，默认: 8887|
 
 ### 访问opendx
-成功启动server后，浏览器访问 http://{server.ip}:{server.port}即可。如: http://192.168.1.2:8887，默认账号密码为admin/admin
+成功启动server后，浏览器访问http://{server.ip}:{server.port}即可。如: http://192.168.1.2:8887，默认账号密码为`admin/admin`
 
 ## 部署agent
 
 ### 环境
 * windows | linux | macos
 * java8
-* appium(>=1.16.0)
+* appium
+    * `移动端必须部署，PC WEB不需要`
+    * 版本`>=1.16.0`
 
-### 部署appium
+### 移动端
+agent目录结构如下:
+```
+├─agent-{version}.jar
+├─lib          // qq群文件解压agent-lib.zip即可获得该目录
+├─vendor       // qq群文件解压agent-vendor.zip即可获得该目录
+```
+#### 部署appium
 
-#### 安装appium
-* 方式一 npm install -g appium --registry=https://registry.npm.taobao.org
-* 方式二 安装appium-desktop桌面版（https://github.com/appium/appium-desktop/releases）
+##### 安装appium
+* 方式1: npm install -g appium --registry=https://registry.npm.taobao.org
+* 方式2: 安装appium-desktop桌面版（https://github.com/appium/appium-desktop/releases）
 
-#### 检查appium环境
+##### 检查appium环境
 1. 安装appium-doctor检查appium配置
 ```sh
 npm install -g appium-doctor --registry=https://registry.npm.taobao.org
 ```
-2. 检查android环境（不测试android，可以不用配置）
+2. 检查android环境（不测试android，可以不用配置android环境）
 ```sh
 $ appium-doctor --android
 info AppiumDoctor Appium Doctor v.1.12.1
@@ -76,7 +88,7 @@ info AppiumDoctor  ✔ opencv4nodejs is installed at: /usr/local/lib. Installed 
 info AppiumDoctor  ✔ ffmpeg is installed at: /usr/local/bin/ffmpeg. ffmpeg version 4.2.1 Copyright (c) 2000-2019 the FFmpeg developers
 info AppiumDoctor ### Diagnostic for optional dependencies completed ###
 ```
-3. 检查ios环境（不测试ios，可以不用配置）
+3. 检查ios环境（不测试ios，可以不用配置ios环境）
 ```sh
 $ appium-doctor --ios
 info AppiumDoctor Appium Doctor v.1.12.1
@@ -95,59 +107,102 @@ info AppiumDoctor ### Diagnostic for optional dependencies starting ###
 info AppiumDoctor  ✔ opencv4nodejs is installed at: /usr/local/lib. Installed version is: 5.5.0
 info AppiumDoctor  ✔ ffmpeg is installed at: /usr/local/bin/ffmpeg. ffmpeg version 4.2.1 Copyright (c) 2000-2019 the FFmpeg developers
 info AppiumDoctor ### Diagnostic for optional dependencies completed ###
-
 ```
->ffmpeg用于合成录制的视频，opencv4nodejs用于图像识别
+> ffmpeg用于合成录制的视频，opencv4nodejs用于图像识别
 
-### 启动agent
-java -jar agent-{version}.jar --ip={ip} --server=http://{server_ip:server_port} --android=true
-> 示例：java -jar agent-0.1.0.jar --ip=192.168.1.8 --server=http://192.168.1.2:8887 --android=true
-
-* --ip: `必须`。agent ip(当前pc的局域网ip，如: 192.168.1.1)
-* --server: `必须`。server的运行地址，如: http://192.168.1.2:8887
-* --port: 非必须。agent服务端口，默认10004
-* --appiumJs: 非必须
-    * npm安装的appium(控制台敲appium能启动appium)，可以不指定。
-    * appium desktop(控制台敲appium无法启动appium)，必须指定。
-    > 示例: --appiumJs=/Appium.app/Contents/Resources/app/node_modules/appium/build/lib/main.js(注意是`build/lib`目录下的main.js)
-* --android: 非必须。是否启用android功能，默认false
-* --remoteScrcpyBitRate: 非必须。android5.0及以上手机远程真机画质。默认2000000 (2Mbps)
-* --androidRecordVideoBitRate: 非必须。报告录制视频画质。默认2 (2Mbps)
-* --minicap-quality: 非必须。android5.0以下手机远程真机画质。默认80，范围: 1-100
-* --ios: 非必须。是否启用ios功能，默认false
-* --mjpegServerFramerate: 非必须。ios远程真机fps。默认60，范围: 1-60
-* --xcodeOrgId --xcodeSigningId --updatedWDABundleId: 非必须
-    > ios真机配置，https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md
-
-#### 启动agent注意事项
-* agent-{version}.jar, lib, vendor处于同一个目录（解压agent-lib.zip, agent-vendor.zip可获取lib, vendor）
+### PC WEB端
+agent目录结构如下:
 ```
 ├─agent-{version}.jar
-├─lib
-├─vendor
+├─lib          // qq群文件解压agent-lib.zip即可获得该目录
+├─browser.json
 ```
-* `必须cd到agent-{version}.jar所处的目录`，执行java -jar启动agent，否则将启动失败
+#### browser.json说明 (`文件编码utf-8`) 
+```json
+[
+    {
+        "driverPath":"d:/driver/firefox/0.26.0.geckodriver.exe",
+        "path":"",
+        "type":"firefox",
+        "version":"76.0.1"
+    },
+    {
+        "driverPath":"d:/driver/firefox/0.26.0.geckodriver.exe",
+        "path":"",
+        "type":"firefox",
+        "version":"76.0.1"
+    },
+    {
+        "driverPath":"d:/driver/chrome/84.0.4147.89.chromedriver.exe",
+        "path":"",
+        "type":"chrome",
+        "version":"84.0.4147.89"
+    },
+    {
+        "driverPath":"d:/driver/chrome/70.0.3538.16.chromedriver.exe",
+        "path":"d:/browser/chrome/70.0.3538.16/chrome.exe",
+        "type":"chrome",
+        "version":"70.0.3538.16"
+    }
+]
+```
+|browser属性|是否必填|描述|
+|----|----|----|
+|driverPath|Y|浏览器驱动全路径|
+|path|N|浏览器路径|   
+|type|Y|浏览器类型，可选值: chrome firefox|
+|version|Y|浏览器版本|
+|id|Y|由agent自动生成，`请勿手动填写`|
+
+> browser.json可以配置多个相同的浏览器实例
+
+### 启动agent
+1. <font color='red'>必须cd到agent-{version}.jar所在目录</font>
+2. java -jar agent-{version}.jar
+> 示例：java -jar agent-0.1.0.jar --ip=192.168.1.8 --server=http://192.168.1.2:8887 --android=true
+
+|启动参数|是否必须|描述|
+|----|----|----|
+|ip|N|当前pc的ip地址，默认127.0.0.1。`建议指定为局域网ip，如192.168.1.8`|
+|port|N|agent服务端口，默认10004|
+|server|Y|server地址，示例: `http://192.168.1.2:8887`|   
+|android|N|是否启用android功能，默认`false`。可选值: true false|
+|ios|N|是否启用ios功能，默认`false`。可选值: true false|
+|pc-web|N|是否启用pc web功能，默认`false`。可选值: true false|
+|remoteScrcpyBitRate|N|>=android5.0手机远程真机画质。默认2000000 (2Mbps)|
+|minicap-quality|N|<android5.0手机远程真机画质。默认80，范围: 1-100|
+|androidRecordVideoBitRate|N|测试报告录制视频画质。默认2 (2Mbps)|
+|xcodeOrgId|N|参考[此处](https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md)|
+|xcodeSigningId|N|参考[此处](https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md)|
+|updatedWDABundleId|N|参考[此处](https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md)|
+|appiumJs|N|指定agent使用哪个appium，详细说明在下面|
+
+#### appiumJs详细说明
+* npm安装的appium(控制台敲appium能启动appium)，可以不指定appiumJs
+* appium desktop(控制台敲appium无法启动appium，提示找不到命令)，必须指定appiumJs
+> 示例: --appiumJs=/Appium.app/Contents/Resources/app/node_modules/appium/`build/lib`/main.js
+
 
 ## 设备接入
 
 ### 接入android设备
-1. 确保启动agent的参数--android=true
+1. 确保agent启动参数`--android=true`
 2. 打开设备的开发者选项-USB调试
-    >有的手机可能还有其他设置要打开，如小米手机的usb安装，usb调试(安全设置)
+    > 有的手机可能还有其他设置要打开，如小米手机的usb安装，usb调试(安全设置)
 3. 手机通过usb数据线连接到正在运行agent的电脑上
-    >这时候adb devices应该能看到这台设备
+    > 这时候adb devices应该能看到这台设备
     ```sh
     bogon:~ jiangyitao$ adb devices
     List of devices attached
     6acbb39a	device 
     ```
 4. agent会自动发现这台设备并进行初次接入的初始化
-    >初始化过程中，会自动安装一些apk。若提示是否安装，需要点击允许安装
-5. 当你在agent控制台看到日志`[android]][abcdefg]androidDeviceConnected处理完成`时，证明手机abcdefg已成功接入平台，此时可以在平台`设备`这一栏选择使用
+    > 初始化过程中，会自动安装一些apk。若提示是否安装，需要点击允许安装
+5. 当你在agent控制台看到日志`[{deviceId}]MobileConnected处理完成`时，证明设备已成功接入平台，此时可以在平台`Mobile`这一栏选择使用
 
 ### 接入ios设备
-1. 确保启动agent的参数--ios=true
+1. 确保agent启动参数`--ios=true`
 2. 配置ios真机http://appium.io/docs/en/drivers/ios-xcuitest-real-devices/
 3. ios真机正确配置后，agent会自动发现这台设备并进行初次接入的初始化
-4. 当你在agent控制台看到日志`[ios][abcdefg]iosDeviceConnected处理完成`时，证明手机abcdefg已成功接入平台，此时可以在平台`设备`这一栏选择使用
+4. 当你在agent控制台看到日志`[{deviceId}]MobileConnected处理完成`时，证明设备已成功接入平台，此时可以在平台`Mobile`这一栏选择使用
 

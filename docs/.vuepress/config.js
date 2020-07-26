@@ -10,7 +10,7 @@ module.exports = {
     locales: {
         '/': {
             title: 'opendx',
-            description: '基于Appium的开源UI自动化测试平台'
+            description: '开源的（移动端 & PC WEB端）UI自动化测试平台'
         }
     },
     themeConfig: {
@@ -39,7 +39,7 @@ module.exports = {
                             ]
                         },
                         {
-                            title: '使用指南',
+                            title: '使用指南(待更新)',
                             collapsable: false,
                             children: [
                                 '/guide/1',

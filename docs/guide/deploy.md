@@ -185,11 +185,11 @@ agent目录结构如下:
 
 ## 设备接入
 
-### 接入android设备
+### 接入android(真机 & 模拟器)
 1. 确保agent启动参数`--android=true`
 2. 打开设备的开发者选项-USB调试
     > 有的手机可能还有其他设置要打开，如小米手机的usb安装，usb调试(安全设置)
-3. 手机通过usb数据线连接到正在运行agent的电脑上
+3. 真机通过usb数据线连接到正在运行agent的电脑上
     > 这时候adb devices应该能看到这台设备
     ```sh
     bogon:~ jiangyitao$ adb devices
@@ -200,9 +200,9 @@ agent目录结构如下:
     > 初始化过程中，会自动安装一些apk。若提示是否安装，需要点击允许安装
 5. 当你在agent控制台看到日志`[{deviceId}]MobileConnected处理完成`时，证明设备已成功接入平台，此时可以在平台`Mobile`这一栏选择使用
 
-### 接入ios设备
+### 接入ios设备（真机 & 模拟器）
 1. 确保agent启动参数`--ios=true`
-2. 配置ios真机http://appium.io/docs/en/drivers/ios-xcuitest-real-devices/
-3. ios真机正确配置后，agent会自动发现这台设备并进行初次接入的初始化
+2. （模拟器忽略该步骤）配置ios真机http://appium.io/docs/en/drivers/ios-xcuitest-real-devices/
+3. agent会自动发现这台设备并进行初次接入的初始化
 4. 当你在agent控制台看到日志`[{deviceId}]MobileConnected处理完成`时，证明设备已成功接入平台，此时可以在平台`Mobile`这一栏选择使用
 

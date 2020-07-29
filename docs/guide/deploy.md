@@ -13,12 +13,8 @@
 - java8
 - mysql5.7
 
-### 创建表与数据
-打开https://github.com/opendx/server/blob/master/db
-1. 创建数据库database.sql
-2. 创建表table.sql
-3. 导入数据data.sql
-> update.sql为升级平台版本要执行的sql，新用户无需关注
+### 创建数据库
+CREATE DATABASE `your-database-name` CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_general_ci';
 
 ### 启动server
 server目录结构如下: 

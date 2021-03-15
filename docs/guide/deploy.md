@@ -21,7 +21,7 @@ server目录结构如下:
 ```
 ├─server-{version}.jar
 └─static
-    ├── frontend
+    ├── frontend // qq群文件解压frontend-{version}.zip即可获得该目录
 ```
 1. <font color='red'>必须cd到server-{version}.jar所在目录</font>
 2. java -jar server-{version}.jar
